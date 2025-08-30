@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Upgrade ComplianceAI</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      line-height: 1.6;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      background: #f8f9fa;
+    }
+    
+    .header {
+      text-align: center;
+      margin-bottom: 40px;
+      padding: 30px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border-radius: 12px;
+    }
+    
+    .plan-card {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+      position: relative;
+    }
+    
+    .popular-badge {
+      position: absolute;
+      top: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #ff6b6b;
+      color: white;
+      padding: 5px 20px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+    
+    .plan-name {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #333;
+    }
+    
+    .plan-price {
+      font-size: 32px;
+      font-weight: bold;
+      color: #667eea;
+      margin-bottom: 20px;
+    }
+    
+    .plan-features {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0;
+    }
+    
+    .plan-features li {
+      padding: 8px 0;
+      border-bottom: 1px solid #eee;
+    }
+    
+    .plan-features li:before {
+      content: "✓";
+      color: #4caf50;
+      font-weight: bold;
+      margin-right: 10px;
+    }
+    
+    .upgrade-btn {
+      width: 100%;
+      padding: 15px;
+      background: #667eea;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+    
+    .upgrade-btn:hover {
+      background: #5a6fd8;
+    }
+    
+    .comparison-table {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      margin: 30px 0;
+    }
+    
+    .comparison-table table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    
+    .comparison-table th,
+    .comparison-table td {
+      padding: 15px;
+      text-align: center;
+      border-bottom: 1px solid #eee;
+    }
+    
+    .comparison-table th {
+      background: #667eea;
+      color: white;
+    }
+    
+    .testimonial {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 20px 0;
+      font-style: italic;
+      border-left: 4px solid #667eea;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>Upgrade ComplianceAI</h1>
+    <p>Unlock unlimited Terms & Conditions analysis</p>
+  </div>
+  
+  <div class="plan-card">
+    <div class="popular-badge">MOST POPULAR</div>
+    <div class="plan-name">Pro Plan</div>
+    <div class="plan-price">$9.99/month</div>
+    
+    <ul class="plan-features">
+      <li>100 analyses per month</li>
+      <li>Detailed compliance reports</li>
+      <li>Priority support</li>
+      <li>Analysis history & export</li>
+      <li>Advanced risk scoring</li>
+      <li>Email alerts for policy changes</li>
+    </ul>
+    
+    <button class="upgrade-btn" onclick="upgradeToPro()">
+      Upgrade to Pro - $9.99/month
+    </button>
+  </div>
+  
+  <div class="plan-card">
+    <div class="plan-name">Enterprise</div>
+    <div class="plan-price">$29.99/month</div>
+    
+    <ul class="plan-features">
+      <li>1000 analyses per month</li>
+      <li>Custom integrations</li>
+      <li>Team management</li>
+      <li>24/7 priority support</li>
+      <li>API access</li>
+      <li>White-label options</li>
+    </ul>
+    
+    <button class="upgrade-btn" onclick="upgradeToEnterprise()">
+      Upgrade to Enterprise - $29.99/month
+    </button>
+  </div>
+  
+  <div class="comparison-table">
+    <table>
+      <thead>
+        <tr>
+          <th>Feature</th>
+          <th>Free</th>
+          <th>Pro</th>
+          <th>Enterprise</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Monthly Analyses</td>
+          <td>3</td>
+          <td>100</td>
+          <td>1000</td>
+        </tr>
+        <tr>
+          <td>Analysis History</td>
+          <td>❌</td>
+          <td>✅</td>
+          <td>✅</td>
+        </tr>
+        <tr>
+          <td>Export Reports</td>
+          <td>❌</td>
+          <td>✅</td>
+          <td>✅</td>
+        </tr>
+        <tr>
+          <td>Priority Support</td>
+          <td>❌</td>
+          <td>✅</td>
+          <td>✅ 24/7</td>
+        </tr>
+        <tr>
+          <td>API Access</td>
+          <td>❌</td>
+          <td>❌</td>
+          <td>✅</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  <div class="testimonial">
+    "ComplianceAI Pro has saved me hours of legal document review. The AI insights are incredibly accurate and help me understand complex terms instantly." - Sarah K., Legal Consultant
+  </div>
+  
+  <div class="testimonial">
+    "As a small business owner, I was drowning in vendor agreements. ComplianceAI helps me understand what I'm signing before it's too late." - Mike R., Business Owner
+  </div>
+  
+  <script>
+    async function upgradeToPro() {
+      try {
+        const { token } = await chrome.storage.sync.get(['token']);
+        
+        if (!token) {
+          alert('Please register first through the extension popup.');
+          return;
+        }
+        
+        // For now, show a coming soon message
+        // In production, this would integrate with payment processor
+        alert('Payment integration coming soon! For now, enjoy your free analyses.');
+        
+        // TODO: Integrate with actual payment processor
+        // const response = await fetch('http://localhost:3000/api/payment/create-session', {
+        //   method: 'POST',
+        //   headers: {
+        //     'Authorization': `Bearer ${token}`,
+        //     'Content-Type': 'application/json'
+        //   },
+        //   body: JSON.stringify({ planId: 'pro' })
+        // });
+        
+      } catch (error) {
+        console.error('Upgrade error:', error);
+        alert('Error starting upgrade process. Please try again.');
+      }
+    }
+    
+    async function upgradeToEnterprise() {
+      alert('Enterprise plan coming soon! Contact us for early access.');
+    }
+  </script>
+</body>
+</html>

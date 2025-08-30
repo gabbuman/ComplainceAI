@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    body {
+      width: 350px;
+      min-height: 400px;
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #f8f9fa;
+    }
+    
+    .header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+    
+    .header h1 {
+      margin: 0;
+      font-size: 16px;
+      font-weight: 600;
+    }
+    
+    .content {
+      padding: 15px;
+    }
+    
+    .status {
+      text-align: center;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+    
+    .status.analyzing {
+      background: #e3f2fd;
+      color: #1565c0;
+    }
+    
+    .status.success {
+      background: #e8f5e8;
+      color: #2e7d32;
+    }
+    
+    .status.error {
+      background: #ffebee;
+      color: #c62828;
+    }
+    
+    .status.no-terms {
+      background: #fff3e0;
+      color: #f57c00;
+    }
+    
+    .analyze-btn {
+      width: 100%;
+      background: #667eea;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      margin-bottom: 15px;
+    }
+    
+    .analyze-btn:hover {
+      background: #5a6fd8;
+    }
+    
+    .analyze-btn:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+    
+    .results {
+      margin-top: 15px;
+    }
+    
+    .score {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: white;
+      padding: 10px 15px;
+      border-radius: 6px;
+      margin-bottom: 10px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    
+    .score-value {
+      font-size: 18px;
+      font-weight: bold;
+      color: #667eea;
+    }
+    
+    .summary {
+      background: white;
+      padding: 15px;
+      border-radius: 6px;
+      margin-bottom: 10px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      font-size: 13px;
+      line-height: 1.4;
+    }
+    
+    .requirements {
+      background: white;
+      border-radius: 6px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      max-height: 200px;
+      overflow-y: auto;
+    }
+    
+    .requirement {
+      padding: 10px 15px;
+      border-bottom: 1px solid #eee;
+      font-size: 13px;
+    }
+    
+    .requirement:last-child {
+      border-bottom: none;
+    }
+    
+    .requirement-priority {
+      display: inline-block;
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-size: 10px;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-bottom: 5px;
+    }
+    
+    .priority-critical { background: #ffebee; color: #c62828; }
+    .priority-high { background: #fff3e0; color: #f57c00; }
+    .priority-medium { background: #e3f2fd; color: #1565c0; }
+    .priority-low { background: #e8f5e8; color: #2e7d32; }
+    
+    .requirement-text {
+      font-weight: 500;
+      margin-bottom: 5px;
+    }
+    
+    .requirement-explanation {
+      color: #666;
+      font-size: 12px;
+    }
+    
+    .usage-info {
+      background: white;
+      padding: 10px;
+      border-radius: 6px;
+      margin-top: 15px;
+      font-size: 12px;
+      color: #666;
+    }
+    
+    .settings-btn {
+      background: none;
+      border: 1px solid #ddd;
+      padding: 6px 12px;
+      border-radius: 4px;
+      font-size: 12px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>ComplianceAI</h1>
+  </div>
+  
+  <div class="content">
+    <button id="analyzeBtn" class="analyze-btn">Analyze Page Terms</button>
+    
+    <div id="status" class="status" style="display: none;">
+      <div id="statusText">Ready to analyze...</div>
+    </div>
+    
+    <div id="results" class="results" style="display: none;">
+      <div class="score">
+        <span>Compliance Score</span>
+        <span id="complianceScore" class="score-value">--</span>
+      </div>
+      
+      <div id="summary" class="summary"></div>
+      
+      <div id="requirements" class="requirements"></div>
+    </div>
+    
+    <div class="usage-info">
+      <div>Daily Usage: <span id="dailyUsage">0</span> / <span id="dailyLimit">50</span></div>
+      <div>Tokens Used: <span id="tokensUsed">0</span></div>
+      <button id="settingsBtn" class="settings-btn">Settings</button>
+    </div>
+  </div>
+  
+  <script src="config.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
