@@ -1,11 +1,11 @@
 // ComplianceAI Extension Configuration
 
 const CONFIG = {
-  // Backend API URL (update this when you deploy to Hostinger)
-  API_BASE_URL: 'http://localhost:3000/api',
+  // Backend API URL (update this when you deploy to Railway)
+  API_BASE_URL: 'http://localhost:8000',
   
-  // Production API URL (uncomment when deployed)
-  // API_BASE_URL: 'https://your-domain.com/api',
+  // Production API URL (uncomment when deployed to Railway)
+  // API_BASE_URL: 'https://your-app-name.up.railway.app',
   
   // Extension settings
   MAX_CONTENT_LENGTH: 8000,
